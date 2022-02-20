@@ -3,9 +3,11 @@ package dev.eamell.terms.cardgenerator.service;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+@Service
 public class PdfBoxObjectCreatorImpl implements PdfBoxObjectCreator {
     @Override
     public PDDocument createDocument() {
