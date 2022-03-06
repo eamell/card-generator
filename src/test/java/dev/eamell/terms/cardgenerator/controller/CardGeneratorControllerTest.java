@@ -2,6 +2,7 @@ package dev.eamell.terms.cardgenerator.controller;
 
 import dev.eamell.terms.cardgenerator.CardGeneratorController;
 import dev.eamell.terms.cardgenerator.model.CardGenerationInfo;
+import dev.eamell.terms.cardgenerator.model.Margin;
 import dev.eamell.terms.cardgenerator.model.PageInfo;
 import dev.eamell.terms.cardgenerator.model.Size;
 import dev.eamell.terms.cardgenerator.service.CardGenerator;
@@ -66,7 +67,11 @@ public class CardGeneratorControllerTest {
     @Test
     void generateCode_shouldReturnResultOfCardGeneration() {
         // given
-        CardGenerationInfo cardGenerationInfo = new CardGenerationInfo(Collections.emptyList(), new PageInfo(new Size(0, 0), new Size(0, 0)));
+        CardGenerationInfo cardGenerationInfo =
+                new CardGenerationInfo(Collections.emptyList(),
+                        new PageInfo(new Size(0, 0),
+                                     new Size(0, 0),
+                                     Margin.equalMargin(0)));
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         outputStream.writeBytes("test string".getBytes(StandardCharsets.UTF_8));
